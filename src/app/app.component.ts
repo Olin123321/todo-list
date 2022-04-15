@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { timeout } from 'rxjs';
+import { Task } from './task';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,23 @@ import { timeout } from 'rxjs';
 })
 export class AppComponent {
   config: { [key: string]: string | Date } | null = null;
+  tasks: Task[] = [
+    {
+    name: 'Zrobić zakupy',
+    deadline: '2022-06-15',
+    done: false,
+    },
+    {
+      name: 'Pranie',
+      deadline: '2022-06-15',
+      done: false,
+    },
+    {
+      name: 'Angular',
+      deadline: '2022-06-15',
+      done: false,
+    }
+  ];
 
   constructor() {
     setTimeout(() => {
