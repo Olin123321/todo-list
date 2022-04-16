@@ -11,9 +11,9 @@
     </div>
 
     <div class="row">
-        <input class="col s8" type="text" placeholder="Dodaj zadanie i datę wykonania" (keyup)="onKeyUp($event)" />
-        <input class="col s2 disabled" type="date" />
-        <button class="btn-floating" (click)="createTask()">+</button>
+        <input class="col s8" type="text" placeholder="Dodaj zadanie i datę wykonania" #nameInput />
+        <input class="col s2 disabled" type="date" #dateInput />
+        <button class="btn-floating" (click)="createTask(nameInput.value, dateInput.value); nameInput.value=''; dateInput.value=''">+</button>
     </div>
 
     <ul class="collection">
@@ -23,11 +23,11 @@
             </span>
             <div class="col s2 right-align">
                 <button class="btn-floating btn-small red">
-          <i class="material-icons">remove</i>
-        </button>
+                    <i class="material-icons">remove</i>
+                </button>
                 <button class="btn-floating btn-small green ml-5">
-          <i class="material-icons">check</i>
-        </button>
+                    <i class="material-icons">check</i>
+                </button>
             </div>
         </li>
         <li class="collection-item row">
