@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
+import { FormsModule } from '@angular/forms';
+
 import localePl from '@angular/common/locales/pl';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localePl);
@@ -12,7 +14,8 @@ registerLocaleData(localePl);
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     { provide: 'LOCALE_ID', useValue: 'pl-PL' }
