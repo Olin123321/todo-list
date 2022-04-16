@@ -7,6 +7,7 @@ import { Task } from './task';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  taskName!: string;
   config: { [key: string]: string | Date } | null = null;
   tasks: Task[] = [
     {
@@ -35,4 +36,23 @@ export class AppComponent {
       };
     }, 500);
   }
+
+  clearTasks() {
+    this.tasks = [];
+  }
+
+  onKeyUp(event: KeyboardEvent) {
+    const target = event.target as HTMLInputElement;
+    this.taskName = target.value;
+  }
+
+  createTask() {
+    const task: Task = {
+      name: this.taskName,
+      deadline: '2022-06-15',
+      done: false,
+    };
+    this.tasks.push(task);
+  }
+
 }
